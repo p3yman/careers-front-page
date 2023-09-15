@@ -1,0 +1,30 @@
+---
+import DefaultLayout from "./DefaultLayout.astro";
+
+const { title } = Astro.props;
+---
+
+<DefaultLayout>
+  <div class="container">
+    <div class="w-full bg-indigo-50 p-20 rounded-3xl my-12">
+      <h1
+        class="w-[600px] text-4xl font-bold mx-auto my-12 leading-normal text-center"
+      >
+        {title}
+      </h1>
+    </div>
+    <div class="prose mx-auto">
+      <slot />
+    </div>
+  </div>
+  <div
+    class="p-40 bg-indigo-600 mt-20 text-center text-white flex flex-col gap-6"
+  >
+    <h1 class="text-4xl font-semibold">
+      Did you like what we have to say? Join us!
+    </h1>
+    <h3 class="text-xl">
+      With offices all around the world, we welcome you wherever you are.
+    </h3>
+  </div>
+</DefaultLayout>
