@@ -1,0 +1,30 @@
+---
+import { headerMenu } from "../settings/menu";
+import Link from "./Link.astro";
+---
+
+<header class="py-8 border-b border-b-secondary">
+  <div class="container flex justify-between items-center">
+    <div class="flex gap-4 items-center">
+      <a href="/" class="text-xl font-bold text-purple-800">ACME Co.</a>
+      <span
+        class="text-purple-500 bg-purple-50 text-xs px-2 py-1 rounded tracking-wider font-semibold"
+        >CAREERS</span
+      >
+    </div>
+    <nav>
+      <div class="flex gap-8">
+        {
+          headerMenu.map(({ label, path }) => (
+            <a href={path} class="text-slate-500 hover:text-indigo-600">
+              {label}
+            </a>
+          ))
+        }
+      </div>
+    </nav>
+    <div>
+      <Link href="/positions">Explore Open Positions</Link>
+    </div>
+  </div>
+</header>

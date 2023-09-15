@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import { general } from "../settings/general";
+import { contact } from "../settings/contact";
+import fbIcon from "../images/fb.svg";
+import inIcon from "../images/in.svg";
+import liIcon from "../images/li.svg";
+import twIcon from "../images/tw.svg";
+import ytIcon from "../images/yt.svg";
+const year = new Date().getFullYear();
+const { socials } = contact;
+---
+
+<footer class="py-20 border-t border-t-secondary">
+  <div class="container flex flex-col justify-center items-center gap-12">
+    <div class="flex gap-4 [&_img]:w-6 [&_img]:h-6">
+      {
+        socials.fb && (
+          <Image src={fbIcon} alt="Facebook" class="text-blue-500" />
+        )
+      }
+      {socials.yt && <Image src={ytIcon} alt="YouTube" class="" />}
+      {socials.li && <Image src={liIcon} alt="LinkedIn" class="" />}
+      {socials.in && <Image src={inIcon} alt="Instagram" class="" />}
+      {socials.tw && <Image src={twIcon} alt="Twitter" class="" />}
+    </div>
+    <div class="text-sm text-slate-400">
+      @{year} -
+      {general.copyright}
+    </div>
+  </div>
+</footer>
