@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/SinglePageLayout.astro"
 title: "Our Values"
 ---
 

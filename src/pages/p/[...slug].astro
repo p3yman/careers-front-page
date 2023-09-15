@@ -1,0 +1,22 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import SinglePageLayout from "../../layouts/SinglePageLayout.astro";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("p");
+  return pages.map((page) => {
+    const id = page.slug.split("/").pop();
+    return {
+      params: { id, slug: id },
+      props: page,
+    };
+  });
+}
+type Props = CollectionEntry<"p">;
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<SinglePageLayout {...post.data} body={post.body}>
+  <Content />
+</SinglePageLayout>
