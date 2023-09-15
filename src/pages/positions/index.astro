@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import PositionItem from "../../components/PositionItem.astro";
+import PageTitle from "../../components/PageTitle.astro";
+
+const positions = await getCollection("positions");
+---
+
+<DefaultLayout>
+  <div class="container mb-20">
+    <PageTitle>
+      Join Our Dynamic Community and Elevate Your Career with Industry Leaders.
+    </PageTitle>
+    <div class="flex flex-col gap-4 mt-8">
+      {positions.map((position) => <PositionItem {...position} />)}
+    </div>
+  </div>
+</DefaultLayout>
