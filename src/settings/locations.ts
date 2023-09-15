@@ -1,0 +1,30 @@
+/**
+ * List of cities that are available for the user to select from.
+ */
+export const locations = [
+  "Amsterdam",
+  "Athens",
+  "Barcelona",
+  "Berlin",
+  "Budapest",
+  "Copenhagen",
+  "Dublin",
+  "Florence",
+  "Helsinki",
+  "Istanbul",
+  "Lisbon",
+  "London",
+  "Madrid",
+  "Milan",
+  "New York",
+  "Oslo",
+  "Paris",
+  "Prague",
+  "Rome",
+  "Stockholm",
+  "Venice",
+  "San Francisco",
+  "Tokyo",
+  "Vienna",
+  "Munich",
+] as const;

@@ -1,12 +1,24 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    colors: {
-      primary: "#0D0D0D",
-      secondary: "#F2F2F2",
-      accent: "#FFC107",
+    container: {
+      center: true,
+      padding: "1rem",
+      screens: {
+        sm: "1180px",
+      },
+    },
+    extend: {
+      fontFamily: {
+        sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        primary: "#0abf53",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
